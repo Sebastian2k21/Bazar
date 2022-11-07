@@ -1,7 +1,13 @@
+using Bazar.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+string connectionString = builder.Configuration.GetConnectionString("Default");
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlite(connectionString));
 
 var app = builder.Build();
 
