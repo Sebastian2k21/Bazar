@@ -18,7 +18,7 @@ namespace Bazar.Data.Models
         public User? Buyer { get; set; }
 
         [ForeignKey("User")]
-        public int? BuyerId { get; set; }
+        public string? BuyerId { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
 

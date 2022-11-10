@@ -1,0 +1,19 @@
+﻿@model LoginViewModel
+
+<form method="POST">
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+        <p class="text-danger">@ViewBag.EmailError</p>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+        <p class="text-danger">@ViewBag.PasswordError</p>
+    </div>
+
+    <button class="btn btn-success">Login</button>
+</form>
