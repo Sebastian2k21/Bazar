@@ -11,7 +11,11 @@ builder.Services.AddControllersWithViews();
 string connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlite(connectionString));
 
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = false)
+builder.Services.AddDefaultIdentity<User>(options => {
+    options.SignIn.RequireConfirmedAccount = false;
+    options.Password.RequireDigit = false;
+    options.Password.RequireNonAlphanumeric = false;
+})
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<DataContext>();
 builder.Services.AddControllersWithViews();
@@ -31,7 +35,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

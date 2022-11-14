@@ -1,6 +1,7 @@
 ﻿using Bazar.Data;
 using Bazar.Data.Models;
 using Bazar.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
@@ -41,11 +42,19 @@ namespace Bazar.Controllers
                     return View();
                 }
 
-                signInManager.SignInAsync(user, true).Wait();
+                signInManager.SignInAsync(user, false).Wait();
+
 
                 return RedirectToAction("Index", "Home");
             }
             return View();
+        }
+
+        [Authorize]
+        public IActionResult Logout()
+        {
+            signInManager.SignOutAsync();
+            return RedirectToAction("Index");
         }
     }
 }
