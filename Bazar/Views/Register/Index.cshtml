@@ -22,5 +22,9 @@
         <span asp-validation-for="PasswordConfirmation" class="text-danger"></span>
     </div>
 
-    <button class="btn btn-success">Register</button>
+    <span class="text-danger">@ViewBag.Error</span>
+    <div>
+        <button class="btn btn-success">Register</button>
+    </div>
+ 
 </form>

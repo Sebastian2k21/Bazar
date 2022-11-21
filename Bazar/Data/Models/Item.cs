@@ -36,5 +36,7 @@ namespace Bazar.Data.Models
 
         [ForeignKey("User")]
         public string? UserId { get; set; }
+
+        public bool Sold { get; set; } = false;
     }
 }

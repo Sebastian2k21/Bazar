@@ -1,0 +1,66 @@
+﻿@model ItemDetailsViewModel
+
+<table class="table table-stripped">
+    <tr>
+        <td>
+            Name 
+        </td>
+        <td>
+            @Model.Name @if (Model.IsNew)
+            {
+                <span class="badge bg-success">New</span>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>@Model.Description</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>@Model.Price zł</td>
+    </tr>
+    @if (Model.PickupInPerson)
+    {
+        <tr>
+            <td>Pickup in person</td>
+            <td>
+                <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
+            </td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Pickup in person</td>
+            <td></td>
+        </tr>
+    }
+
+    @if (Model.CourierDelivery)
+    {
+        <tr>
+            <td>Courier Delivery</td>
+            <td>
+                <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
+            </td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td>Courier Delivery</td>
+            <td></td>
+        </tr>
+    }
+
+    <tr>
+        <td>Category</td>
+        <td>@Model.CategoryName</td>
+    </tr>
+    
+    <tr>
+        <td>Owner</td>
+        <td>@Model.OwnerName</td>
+    </tr>
+</table>
