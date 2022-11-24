@@ -63,4 +63,12 @@
         <td>Owner</td>
         <td>@Model.OwnerName</td>
     </tr>
+
+    @if(ViewBag.CanBuy)
+    {
+        <tr>
+            <td></td>
+            <td><a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn btn-success">Buy now</a></td>
+        </tr>
+    }
 </table>

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bazar.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221110145517_add identity")]
-    partial class addidentity
+    [Migration("20221124144738_init4")]
+    partial class init4
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -77,6 +77,43 @@ namespace Bazar.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Bazar.Data.Models.DeliveryMethod", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DeliveryMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Kurier"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Paczkomat"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Paczka polecona"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Odbiór osobisty"
+                        });
+                });
+
             modelBuilder.Entity("Bazar.Data.Models.Item", b =>
                 {
                     b.Property<int>("Id")
@@ -107,6 +144,9 @@ namespace Bazar.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("REAL");
+
+                    b.Property<bool>("Sold")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -156,10 +196,22 @@ namespace Bazar.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Comment")
+                        .HasMaxLength(200)
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("DeliveryMethodId")
+                        .IsRequired()
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("ItemId")
+                        .IsRequired()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("PaymentMethodId")
                         .IsRequired()
                         .HasColumnType("INTEGER");
 
@@ -167,9 +219,55 @@ namespace Bazar.Migrations
 
                     b.HasIndex("BuyerId");
 
+                    b.HasIndex("DeliveryMethodId");
+
                     b.HasIndex("ItemId");
 
+                    b.HasIndex("PaymentMethodId");
+
                     b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Bazar.Data.Models.PaymentMethod", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PaymentMethods");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Przelew bankowy"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "BLIK"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Karta"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Gotówka"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Paysafecard"
+                        });
                 });
 
             modelBuilder.Entity("Bazar.Data.Models.User", b =>
@@ -395,15 +493,31 @@ namespace Bazar.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Bazar.Data.Models.DeliveryMethod", "DeliveryMethod")
+                        .WithMany()
+                        .HasForeignKey("DeliveryMethodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Bazar.Data.Models.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Bazar.Data.Models.PaymentMethod", "PaymentMethod")
+                        .WithMany()
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Buyer");
 
+                    b.Navigation("DeliveryMethod");
+
                     b.Navigation("Item");
+
+                    b.Navigation("PaymentMethod");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

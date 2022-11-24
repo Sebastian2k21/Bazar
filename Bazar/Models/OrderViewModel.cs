@@ -1,61 +1,45 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Bazar.Data.Models;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace Bazar.Data.Models
+namespace Bazar.Models
 {
-    public class Order
+    public class OrderViewModel
     {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        public Item? Item { get; set; }
-
-        [ForeignKey("Item")]
-        public int? ItemId { get; set; }
-
-        [Required]
-        public User? Buyer { get; set; }
-
-        [ForeignKey("User")]
-        public string? BuyerId { get; set; }
-
-        public DateTime Date { get; set; } = DateTime.Now;
-
         [Required]
         [MaxLength(100)]
+        [Display(Name = "Street")]
         public string? BuyerStreet { get; set; }
 
         [Required]
         [MaxLength(100)]
+        [Display(Name = "City")]
         public string? BuyerCity { get; set; }
 
         [Required]
         [MaxLength(100)]
+        [Display(Name = "Email")]
         public string? BuyerEmail { get; set; }
 
         [Required]
         [MaxLength(15)]
+        [Display(Name = "Phone")]
         public string? BuyerPhone { get; set; }
 
         [Required]
         [MaxLength(100)]
+        [Display(Name = "Full name")]
         public string? BuyerFullName { get; set; }
 
         [MaxLength(200)]
         public string? Comment { get; set; }
 
         [Required]
-        public PaymentMethod? PaymentMethod { get; set; }
-
-        [ForeignKey("PaymentMethod")]
+        [Display(Name = "Payment method")]
         public int? PaymentMethodId { get; set; }
 
         [Required]
-        
-        public DeliveryMethod? DeliveryMethod { get; set; }
-
-        [ForeignKey("DeliveryMethod")]
+        [Display(Name = "Delivery method")]
         public int? DeliveryMethodId { get; set; }
     }
 }

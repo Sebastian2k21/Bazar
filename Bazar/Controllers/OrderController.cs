@@ -1,0 +1,74 @@
+﻿using AutoMapper;
+using Bazar.Data;
+using Bazar.Data.Models;
+using Bazar.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Security.Claims;
+
+namespace Bazar.Controllers
+{
+    [Authorize]
+    public class OrderController : Controller
+    {
+        private readonly DataContext context;
+        private readonly IMapper mapper;
+
+        public OrderController(DataContext context, IMapper mapper)
+        {
+            this.context = context;
+            this.mapper = mapper;
+        }
+
+        private void SetDataToViewBag()
+        {
+            var paymentMethods = context.PaymentMethods.ToList();
+            var deliveryMethods = context.DeliveryMethods.ToList();
+            ViewBag.PaymentMethods = new SelectList(paymentMethods, "Id", "Name");
+            ViewBag.DeliveryMethods = new SelectList(deliveryMethods, "Id", "Name");
+        }
+
+        private string GetUserId()
+        {
+            return User.FindFirstValue(ClaimTypes.NameIdentifier);
+        }
+
+        public IActionResult Buy(int id)
+        {
+            var item = context.Items.Find(id);
+            if(item == null || item.Sold || GetUserId() == item.UserId)
+            {
+                return RedirectToAction("Index", "Item");
+            }
+            ViewBag.Item = item;
+            SetDataToViewBag();
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Buy(int id, OrderViewModel model)
+        {
+            var item = context.Items.Find(id);
+            if (item == null || item.Sold || GetUserId() == item.UserId)
+            {
+                return RedirectToAction("Index", "Item");
+            }
+            
+            if (ModelState.IsValid)
+            {
+                var order = mapper.Map<Order>(model);
+                order.ItemId = id;
+                order.BuyerId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                context.Orders.Add(order);
+                item.Sold = true;
+                context.SaveChanges();
+                return RedirectToAction("Index", "Item");
+            }
+            
+            ViewBag.Item = item;
+            SetDataToViewBag();
+            return View(model);
+        }
+    }
+}

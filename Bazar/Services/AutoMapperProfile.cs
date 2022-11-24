@@ -14,6 +14,7 @@ namespace Bazar.Services
                 .ForMember(x => x.OwnerId, y => y.MapFrom(x => x.User.Id))
                 .ForMember(x => x.OwnerName, y => y.MapFrom(x => x.User.UserName));
             CreateMap<RegisterViewModel, User>();
+            CreateMap<OrderViewModel, Order>();
         }
     }
 }

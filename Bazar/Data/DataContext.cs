@@ -13,6 +13,8 @@ namespace Bazar.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Item> Items { get; set; }
+        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
+        public DbSet<PaymentMethod> PaymentMethods { get; set; }
 
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -23,6 +25,8 @@ namespace Bazar.Data
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.SeedCategory();
+            modelBuilder.SeedDeliveryMethods();
+            modelBuilder.SeedPaymentMethods();
         }
     }
 

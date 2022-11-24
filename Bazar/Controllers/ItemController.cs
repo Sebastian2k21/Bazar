@@ -22,9 +22,14 @@ namespace Bazar.Controllers
             this.mapper = mapper;
         }
 
+        private string GetUserId()
+        {
+            return User.FindFirstValue(ClaimTypes.NameIdentifier);
+        }
+        
         public IActionResult Index()
         {
-            return View(context.Items.ToList());
+            return View(context.Items.Where(x => !x.Sold).ToList());
         }
 
         public IActionResult Create()
@@ -39,9 +44,8 @@ namespace Bazar.Controllers
         {
             if(ModelState.IsValid)
             {
-                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var item = mapper.Map<Item>(model);
-                item.UserId = userId;
+                item.UserId = GetUserId();
                 context.Add(item);
                 context.SaveChanges();
                 return RedirectToAction("Index");
@@ -64,6 +68,7 @@ namespace Bazar.Controllers
             {
                 return RedirectToAction("Index");
             }
+            ViewBag.CanBuy = GetUserId() != item.UserId && !item.Sold;
             return View(mapper.Map<ItemDetailsViewModel>(item));
         }
     }
