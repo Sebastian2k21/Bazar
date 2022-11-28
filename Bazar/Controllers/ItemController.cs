@@ -32,6 +32,12 @@ namespace Bazar.Controllers
             return View(context.Items.Where(x => !x.Sold).ToList());
         }
 
+        public IActionResult MyItems()
+        {
+            var userId = GetUserId();
+            return View(context.Items.Where(x => x.UserId == userId).ToList());
+        }
+
         public IActionResult Create()
         {
             var categories = context.Categories.ToList();
@@ -70,6 +76,53 @@ namespace Bazar.Controllers
             }
             ViewBag.CanBuy = GetUserId() != item.UserId && !item.Sold;
             return View(mapper.Map<ItemDetailsViewModel>(item));
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var item = context.Items.Find(id);
+            if (item == null || item.UserId != GetUserId() || item.Sold)
+            {
+                return RedirectToAction("MyItems");
+            }
+            context.Remove(item);
+            context.SaveChanges();
+            return RedirectToAction("MyItems");
+        }
+
+        public IActionResult Update(int id)
+        {
+            var item = context.Items.Find(id);
+            if (item == null || item.UserId != GetUserId() || item.Sold)
+            {
+                return RedirectToAction("MyItems");
+            }
+
+            var categories = context.Categories.ToList();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            return View(mapper.Map<ItemViewModel>(item));
+        }
+
+        [HttpPost]
+        public IActionResult Update(int id, ItemViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var item = context.Items.Find(id);
+                if (item == null || item.UserId != GetUserId() || item.Sold)
+                {
+                    return RedirectToAction("MyItems");
+                }
+                mapper.Map(model, item);
+                context.Update(item);
+                context.SaveChanges();
+                return RedirectToAction("Details", new { id=id });
+            }
+
+            var categories = context.Categories.ToList();
+            ViewBag.Categories = new SelectList(categories, "Id", "Name");
+
+            return View(model);
         }
     }
 }

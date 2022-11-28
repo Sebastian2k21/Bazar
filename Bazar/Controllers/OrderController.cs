@@ -5,6 +5,7 @@ using Bazar.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Bazar.Controllers
@@ -70,5 +71,34 @@ namespace Bazar.Controllers
             SetDataToViewBag();
             return View(model);
         }
+
+        public IActionResult Details(int id)
+        {
+            var order = context.Orders
+                .Include(x => x.Item)
+                .Include(x => x.DeliveryMethod)
+                .Include(x => x.PaymentMethod)
+                .FirstOrDefault(x => x.Id == id);
+            if (order == null || order.BuyerId != GetUserId())
+            {
+                return RedirectToAction("Index", "Order");
+            }
+            return View(mapper.Map<OrderDetailsViewModel>(order));
+        }
+
+        public IActionResult Index()
+        {
+            {
+                var orders = context.Orders
+                    .Include(x => x.Item)
+                    .Include(x => x.DeliveryMethod)
+                    .Include(x => x.PaymentMethod)
+                    .Where(x => x.BuyerId == GetUserId())
+                    .ToList();
+                return View(orders);
+            }
+        }
     }
+        
+    
 }

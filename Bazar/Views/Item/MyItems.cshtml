@@ -1,0 +1,34 @@
+﻿@using Bazar.Data.Models
+@model List<Item>
+
+<h1>My items</h1>
+
+<table class="table striped">
+    <thed>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thed>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><a asp-action="Details" asp-route-id="@item.Id">@item.Name</a></td>
+                <td>@item.Price</td>
+                <td>@if (item.Sold)
+                    {
+                        <span>Sold</span>
+                    }</td>
+                <td>
+                    @if (!item.Sold)
+                    {
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> <a asp-action="Update" asp-route-id="@item.Id">Edit</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

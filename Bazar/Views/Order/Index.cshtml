@@ -1,0 +1,24 @@
+﻿@using Bazar.Data.Models
+@model List<Order>
+
+   <h1>Ordered Items</h1>
+
+<table class="table striped">
+    <thed>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+    </thed>
+    <tbody>
+        @foreach(var order in Model)
+        {
+            <tr>
+                <td><a asp-action="Details" asp-route-id="@order.Id">@order.Item.Name</a></td>
+                <td>@order.Item.Price</td>
+                <td>@order.Date</td>
+            </tr>
+        }
+    </tbody>
+</table>
