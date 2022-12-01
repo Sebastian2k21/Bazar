@@ -1,9 +1,12 @@
-﻿@model ItemDetailsViewModel
+﻿@using Bazar.Data.Models
+@using Microsoft.AspNetCore.Identity
+@model ItemDetailsViewModel
+@inject SignInManager<User> signInManager;
 
 <table class="table table-stripped">
     <tr>
         <td>
-            Name 
+            Name
         </td>
         <td>
             @Model.Name @if (Model.IsNew)
@@ -58,17 +61,25 @@
         <td>Category</td>
         <td>@Model.CategoryName</td>
     </tr>
-    
+
     <tr>
         <td>Owner</td>
         <td>@Model.OwnerName</td>
     </tr>
 
-    @if(ViewBag.CanBuy)
+    @if (ViewBag.CanBuy)
     {
         <tr>
             <td></td>
-            <td><a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn btn-success">Buy now</a></td>
+            @if (!signInManager.IsSignedIn(User))
+            {
+                 <td><a asp-controller="Login" asp-action="Index" asp-route-message="Log in to buy item" class="btn btn-success">Buy now</a></td>
+            }
+            else
+            {
+                <td><a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn btn-success">Buy now</a></td>
+
+            }
         </tr>
     }
 </table>

@@ -8,6 +8,7 @@ namespace Bazar.Services
     {
         public AutoMapperProfile()
         {
+            CreateMap<Item, ItemShortViewModel>();
             CreateMap<ItemViewModel, Item>();
             CreateMap<Item, ItemViewModel>();
             CreateMap<Item, ItemDetailsViewModel>()

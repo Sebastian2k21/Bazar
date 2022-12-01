@@ -26,7 +26,8 @@ namespace Bazar.Controllers
         {
             return User.FindFirstValue(ClaimTypes.NameIdentifier);
         }
-        
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View(context.Items.Where(x => !x.Sold).ToList());
@@ -63,6 +64,7 @@ namespace Bazar.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
         public IActionResult Details(int id)
         {
             var item = context.Items

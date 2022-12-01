@@ -1,6 +1,35 @@
 ﻿@using Bazar.Data.Models
 @model List<Item>
 
+<div class="row">
+    <div class="col">
+        <div class="row">
+            <div class="col-sm-auto align-self-center">Search</div>
+            <div class="col align-self-center"><input id="search_text" class="form-control" /></div>
+        </div>
+
+    </div>
+    <div class="col">
+        <div class="row ">
+            <div class="col-sm-auto align-self-center">From</div>
+            <div class="col">   <input id="price_from" type="number" class="form-control align-self-center" /></div>
+            <div class="col-sm-auto align-self-center">zł</div>
+        </div>
+
+
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col-sm-auto align-self-center">To</div>
+            <div class="col align-self-center">   <input id="price_to" type="number" class="form-control" /></div>
+            <div class="col-sm-auto align-self-center">zł</div>
+        </div>
+    </div>
+    <div class="col">
+        <button id="search_button" class="btn btn-info align-self-center"><i class="bi bi-search"></i></button>
+    </div>
+</div>
+
 <table class="table striped">
     <thed>
         <tr>
@@ -9,7 +38,7 @@
         </tr>
     </thed>
     <tbody>
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
             <tr>
                 <td><a asp-action="Details" asp-route-id="@item.Id">@item.Name</a></td>

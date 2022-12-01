@@ -19,8 +19,9 @@ namespace Bazar.Controllers
             this.signInManager = signInManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string? message = null)
         {
+            ViewBag.Message = message;
             return View();
         }
 
