@@ -24,6 +24,15 @@
             }
         })
         $.get(url, function (data) {
+            let table = $("#tableBody");
+            table.html("")
+            data.forEach(item => {
+                let row = $("<tr></tr>")
+                let col1 = $("<td></td>").append(`<a href='/Item/Details/${item.id}'>${item.name}</a>`)
+                let col2 = $("<td></td>").append("" + item.price)
+                row.append(col1, col2)
+                table.append(row)
+            });
             console.log(data)
         })
     })

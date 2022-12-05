@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Bazar.Models
+﻿namespace Bazar.DTO.Item
 {
-    public class ItemShortViewModel
+    public class ItemGetDTO
     {
         public int Id { get; set; }
         public string? Name { get; set; }

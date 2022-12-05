@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bazar.Data;
+using Bazar.DTO.Item;
 using Bazar.Models;
 using Humanizer;
 using Microsoft.AspNetCore.Http;
@@ -40,7 +41,7 @@ namespace Bazar.Controllers
                 items = items.Where(x => x.Price <= to).ToList();
             }
 
-            return Ok(mapper.Map<List<ItemShortViewModel>>(items));
+            return Ok(mapper.Map<List<ItemGetDTO>>(items));
         }
     }
 }
