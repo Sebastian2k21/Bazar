@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bazar.Data;
 using Bazar.Data.Models;
+using Bazar.Data.Repositories;
 using Bazar.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,11 +15,13 @@ namespace Bazar.Controllers
     public class OrderController : Controller
     {
         private readonly DataContext context;
+        private readonly IItemRepository itemRepository;
         private readonly IMapper mapper;
 
-        public OrderController(DataContext context, IMapper mapper)
+        public OrderController(DataContext context, IItemRepository itemRepository, IMapper mapper)
         {
             this.context = context;
+            this.itemRepository = itemRepository;
             this.mapper = mapper;
         }
 
@@ -37,8 +40,8 @@ namespace Bazar.Controllers
 
         public IActionResult Buy(int id)
         {
-            var item = context.Items.Find(id);
-            if(item == null || item.Sold || GetUserId() == item.UserId)
+            var item = itemRepository.GetById(id);
+            if (item == null || item.Sold || GetUserId() == item.UserId)
             {
                 return RedirectToAction("Index", "Item");
             }

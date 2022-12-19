@@ -28,6 +28,7 @@ namespace Bazar.Data
             modelBuilder.SeedDeliveryMethods();
             modelBuilder.SeedPaymentMethods();
             modelBuilder.SeedRoles();
+            modelBuilder.SeedUsers();
         }
     }
 

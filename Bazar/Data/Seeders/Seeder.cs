@@ -72,6 +72,11 @@ namespace Bazar.Data.Seeders
                     SecurityStamp = "9cd5719e-04a6-41c4-91af-a762759806cc"
                 }
             });
+
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(new[]
+            {
+                new IdentityUserRole<string> {UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471", RoleId = "8e91c187-f152-4ea9-a39d-e1615dbb6419"}
+            });
         }
     }
 }

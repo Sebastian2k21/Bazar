@@ -1,5 +1,6 @@
 using Bazar.Data;
 using Bazar.Data.Models;
+using Bazar.Data.Repositories;
 using Bazar.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,8 @@ builder.Services.AddDefaultIdentity<User>(options => {
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+builder.Services.AddScoped<IItemRepository, ItemRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
 var app = builder.Build();
 

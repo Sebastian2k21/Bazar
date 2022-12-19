@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Bazar.Data;
 using Bazar.Data.Models;
+using Bazar.Data.Repositories;
 using Bazar.DTO.Category;
 using Bazar.DTO.Item;
 using Microsoft.AspNetCore.Authorization;
@@ -14,12 +15,12 @@ namespace Bazar.Controllers
     [Authorize]
     public class CategoryController : ControllerBase
     {
-        private readonly DataContext context;
+        private readonly ICategoryRepository categoryRepository;
         private readonly IMapper mapper;
 
-        public CategoryController(DataContext context, IMapper mapper)
+        public CategoryController(ICategoryRepository categoryRepository, IMapper mapper)
         {
-            this.context = context;
+            this.categoryRepository = categoryRepository;
             this.mapper = mapper;
         }
 
@@ -27,14 +28,14 @@ namespace Bazar.Controllers
         [AllowAnonymous]
         public IActionResult GetAll()
         {
-            return Ok(mapper.Map<List<CategoryGetDTO>>(context.Categories.ToList()));
+            return Ok(mapper.Map<List<CategoryGetDTO>>(categoryRepository.GetAll()));
         }
 
         [HttpGet("{id}")]
         [AllowAnonymous]
         public IActionResult Get(int id)
         {
-            var category = context.Categories.Find(id);
+            var category = categoryRepository.GetById(id);
             if (category is null)
             {
                 return NotFound();
@@ -45,22 +46,20 @@ namespace Bazar.Controllers
         [HttpPost]
         public IActionResult Create(CategoryCreateDTO category)
         {
-            context.Categories.Add(mapper.Map<Category>(category));
-            context.SaveChanges();
+            categoryRepository.Create(mapper.Map<Category>(category));
             return Ok();
         }
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, CategoryCreateDTO category)
         {
-            var categoryToUpdate = context.Categories.Find(id);
+            var categoryToUpdate = categoryRepository.GetById(id);
             if (categoryToUpdate is null)
             {
                 return NotFound();
             }
             mapper.Map(category, categoryToUpdate);
-            context.Update(categoryToUpdate);
-            context.SaveChanges();
+            categoryRepository.Update(categoryToUpdate);
             return Ok();
         }
 
@@ -68,13 +67,12 @@ namespace Bazar.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var category = context.Categories.Find(id);
+            var category = categoryRepository.GetById(id);
             if (category is null)
             {
                 return NotFound();
             }
-            context.Categories.Remove(category);
-            context.SaveChanges();
+            categoryRepository.Delete(id);
             return Ok();
         }
     }

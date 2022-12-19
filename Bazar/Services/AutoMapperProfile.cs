@@ -29,6 +29,7 @@ namespace Bazar.Services
             CreateMap<Category, CategoryGetDTO>();
             CreateMap<CategoryCreateDTO, Category>();
 
+            CreateMap<User, UserViewModel>();
         }
     }
 }

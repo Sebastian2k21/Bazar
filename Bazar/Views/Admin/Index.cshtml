@@ -1,0 +1,23 @@
+﻿@using Bazar.Data.Models
+@model List<UserViewModel>
+
+
+<table class="table striped">
+    <thed>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thed>
+    <tbody id="tableBody">
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id`</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

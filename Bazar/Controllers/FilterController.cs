@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Bazar.Data;
+using Bazar.Data.Repositories;
 using Bazar.DTO.Item;
 using Bazar.Models;
 using Humanizer;
@@ -13,22 +14,21 @@ namespace Bazar.Controllers
     [ApiController]
     public class FilterController : ControllerBase
     {
-        private readonly DataContext context;
+        private readonly IItemRepository itemRepository;
         private readonly IMapper mapper;
 
-        public FilterController(DataContext context, IMapper mapper)
+        public FilterController(IItemRepository itemRepository, IMapper mapper)
         {
-            this.context = context;
+            this.itemRepository = itemRepository;
             this.mapper = mapper;
         }
         
         [HttpGet]
         public async Task<IActionResult> GetAll(string? text = null, int? from = null, int? to = null)
         {
-            var items = await context.Items
-                .Where(x => !x.Sold)
-                .ToListAsync();
-            if(text is not null)
+            var items = itemRepository.GetAllNotSold();
+            
+            if (text is not null)
             {
                 items = items.Where(x => x.Name.ToLower().Contains(text.ToLower())).ToList();
             }
