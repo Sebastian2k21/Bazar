@@ -25,6 +25,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IAdminManager, AdminManager>();
 
 var app = builder.Build();
 

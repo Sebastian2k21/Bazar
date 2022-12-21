@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Bazar.Data;
 using Bazar.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bazar.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly DataContext context;

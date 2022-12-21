@@ -1,6 +1,8 @@
 ﻿@using Bazar.Data.Models
+@using Bazar.Services
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> signInManager;
+@inject IAdminManager adminManager;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,6 +54,12 @@
                               <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Item" asp-action="MyItems">My items</a>
                             </li>
+                            if (adminManager.IsAdmin(User))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin Panel</a>
+                                </li>
+                            }
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Logout</a>
                             </li>
