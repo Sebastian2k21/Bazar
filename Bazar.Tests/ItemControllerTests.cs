@@ -10,24 +10,8 @@ using System.Security.Principal;
 
 namespace Bazar.Tests
 {
-    public class ItemControllerTests
+    public class ItemControllerTests : TestBase
     {
-        private IMapper CreateMapper()
-        {
-            var mockMapper = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new AutoMapperProfile());
-            });
-            return mockMapper.CreateMapper();
-        }
-       
-        private ClaimsIdentity CreateIdentity()
-        {
-            var identity = new ClaimsIdentity();
-            identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, "123"));
-            return identity;
-        }
-
         [Fact]
         public void CreateCorrectItemTest()
         {
@@ -42,17 +26,15 @@ namespace Bazar.Tests
                 Price = 100
             };
 
-            IMapper mapper = CreateMapper();
-            IItemRepository itemRepository = new ItemFakeRepository(mapper);
-            ICategoryRepository categoryRepository = new CategoryFakeRepository(mapper);
-            var controller = new ItemController(itemRepository, categoryRepository, mapper);
-            controller.User.AddIdentity(CreateIdentity());
+            Services services = CreateServices();
+
+            var controller = new ItemController(services.ItemRepository, services.CategoryRepository, services.Mapper);
             var result = controller.Create(item);
 
-            var itemFromDb = itemRepository.GetById(1);
+            var itemFromDb = services.ItemRepository.GetById(1);
             Assert.IsType<RedirectResult>(result);
             Assert.NotNull(itemFromDb);
-            Assert.Equal(itemRepository.GetAll().Count, 1);
+            Assert.Equal(services.ItemRepository.GetAll().Count, 1);
             Assert.Equal(itemFromDb.Name, item.Name);
             Assert.Equal(itemFromDb.Price, item.Price);
         }
