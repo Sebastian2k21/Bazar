@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bazar.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221219142308_seed admin")]
-    partial class seedadmin
+    [Migration("20221229141033_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -159,6 +159,47 @@ namespace Bazar.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CourierDelivery = true,
+                            Description = "Telefon Samsung Galaxy S21 5G 128GB Phantom Violet",
+                            IsNew = true,
+                            Name = "Telefon Samsung Galaxy S21 5G",
+                            PickupInPerson = false,
+                            Price = 3999.0,
+                            Sold = false,
+                            UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 1,
+                            CourierDelivery = false,
+                            Description = "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Black",
+                            IsNew = false,
+                            Name = "Telefon Samsung Galaxy S21 Ultra 5G",
+                            PickupInPerson = false,
+                            Price = 5999.0,
+                            Sold = false,
+                            UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            CourierDelivery = false,
+                            Description = "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Silver",
+                            IsNew = true,
+                            Name = "Telefon Samsung Galaxy S21 Ultra 5G",
+                            PickupInPerson = true,
+                            Price = 5999.0,
+                            Sold = false,
+                            UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471"
+                        });
                 });
 
             modelBuilder.Entity("Bazar.Data.Models.Order", b =>
@@ -344,7 +385,7 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@BAZAR.PL",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEMEkAPyo1+erUmmvKPE4C5sSrwNo/B3TgN7UqCXfoVdGpO3EeVXodsYEaPzyo5uE/g==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHslAsiDUzQSe3C6Pa/OaWl3HrTvGVh4xPKVNC5epHaZHECPTpebA9R0rTVqqknWgQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "9cd5719e-04a6-41c4-91af-a762759806cc",
                             TwoFactorEnabled = false,

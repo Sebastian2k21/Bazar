@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bazar.Migrations
 {
-    public partial class init4 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -274,6 +274,21 @@ namespace Bazar.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "8e91c187-f152-4ea9-a39d-e1615dbb6419", "3f629339-9f05-4651-9663-8df060be2db2", "Admin", "ADMIN" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "9244da6e-9e04-440a-b6ae-9d93cbea9aa5", "2075a85c-e5b3-45e7-8a81-2270fc6b3204", "User", "USER" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "cc05fc2b-da9e-431d-a9dc-254c620de471", 0, "7b8f4b5b-80dc-4275-8331-ca552dc9a2d7", "admin@bazar.pl", true, false, null, "ADMIN@BAZAR.PL", "ADMIN", "AQAAAAEAACcQAAAAEHslAsiDUzQSe3C6Pa/OaWl3HrTvGVh4xPKVNC5epHaZHECPTpebA9R0rTVqqknWgQ==", null, false, "9cd5719e-04a6-41c4-91af-a762759806cc", false, "admin" });
+
+            migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 1, "Telefony" });
@@ -357,6 +372,26 @@ namespace Bazar.Migrations
                 table: "PaymentMethods",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 5, "Paysafecard" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "8e91c187-f152-4ea9-a39d-e1615dbb6419", "cc05fc2b-da9e-431d-a9dc-254c620de471" });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
+                values: new object[] { 1, 1, true, "Telefon Samsung Galaxy S21 5G 128GB Phantom Violet", true, "Telefon Samsung Galaxy S21 5G", false, 3999.0, false, "cc05fc2b-da9e-431d-a9dc-254c620de471" });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
+                values: new object[] { 2, 1, false, "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Black", false, "Telefon Samsung Galaxy S21 Ultra 5G", false, 5999.0, false, "cc05fc2b-da9e-431d-a9dc-254c620de471" });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
+                values: new object[] { 3, 1, false, "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Silver", true, "Telefon Samsung Galaxy S21 Ultra 5G", true, 5999.0, false, "cc05fc2b-da9e-431d-a9dc-254c620de471" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

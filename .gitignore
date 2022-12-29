@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Bazar/bazardb.db-wal
+/Bazar/bazardb.db-shm
+/Bazar/bazardb.db

@@ -49,7 +49,7 @@ namespace Bazar.Data.Seeders
             modelBuilder.Entity<IdentityRole>().HasData(new[]
             {
                 new IdentityRole { Id = "8e91c187-f152-4ea9-a39d-e1615dbb6419", Name = "Admin", NormalizedName = "ADMIN", ConcurrencyStamp="3f629339-9f05-4651-9663-8df060be2db2" },
-                new IdentityRole { Id = "9244da6e-9e04-440a-b6ae-9d93cbea9aa5", Name = "User", NormalizedName = "USER", 
+                new IdentityRole { Id = "9244da6e-9e04-440a-b6ae-9d93cbea9aa5", Name = "User", NormalizedName = "USER",
                     ConcurrencyStamp="2075a85c-e5b3-45e7-8a81-2270fc6b3204" }
             });
         }
@@ -76,6 +76,44 @@ namespace Bazar.Data.Seeders
             modelBuilder.Entity<IdentityUserRole<string>>().HasData(new[]
             {
                 new IdentityUserRole<string> {UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471", RoleId = "8e91c187-f152-4ea9-a39d-e1615dbb6419"}
+            });
+        }
+
+        public static void SeedItems(this ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Item>().HasData(new[]
+            {
+                new Item
+                {
+                    Id = 1,
+                    Name = "Telefon Samsung Galaxy S21 5G",
+                    Description = "Telefon Samsung Galaxy S21 5G 128GB Phantom Violet",
+                    Price = 3999,
+                    CategoryId = 1,
+                    CourierDelivery = true,
+                    UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471",
+                    IsNew = true
+                },
+                new Item
+                {
+                    Id = 2,
+                    Name = "Telefon Samsung Galaxy S21 Ultra 5G",
+                    Description = "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Black",
+                    Price = 5999,
+                    CategoryId = 1,
+                    UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471"
+                },
+                new Item
+                {
+                    Id = 3,
+                    Name = "Telefon Samsung Galaxy S21 Ultra 5G",
+                    Description = "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Silver",
+                    Price = 5999,
+                    CategoryId = 1,
+                    UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471",
+                    IsNew = true,
+                    PickupInPerson = true,
+                }
             });
         }
     }
