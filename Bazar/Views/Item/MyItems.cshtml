@@ -15,7 +15,7 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
+            <tr data-aos="flip-left">
                 <td><a asp-action="Details" asp-route-id="@item.Id">@item.Name</a></td>
                 <td>@item.Price</td>
                 <td>@if (item.Sold)
