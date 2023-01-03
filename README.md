@@ -20,6 +20,9 @@ Strona znajduje się pod adresem: ``https://localhost:7046``, aby zalogować si�
 
 ## Instrukcja użytkownika
 
+
+### Rejestracja
+
 Aby skorzystać z aplikacji należy wykorzystać przygotowane dane logowania lub stworzyć nowego użytkownika za pomocą formularza rejestracji wchodząc pod adres ``https://localhost:7046/Register``
 
 ![Formularz rejestracji](/register.png)
@@ -31,17 +34,17 @@ Logowanie znajduje się pod adresem: ``https://localhost:7046/Login``. Należy p
 ![Formularz logowania](/login.png)
 
 ### Dodawanie przedmiotu
-Dodawanie przedmiotu znajduje się pod adresem: ``https://localhost:7046/Item/Create``. Użytkownik powinien być zalogowany. Należy obowiązkowo wprowadzić: nazwe, cenę oraz kategorię. 
+Dodawanie przedmiotu znajduje się w zakładce ``Sell Item`` pod adresem: ``https://localhost:7046/Item/Create``. Użytkownik powinien być zalogowany. Należy obowiązkowo wprowadzić: nazwe, cenę oraz kategorię. 
 
 ![Formularz dodawania przedmiotu](/additem.png)
 
-Dodany przedmiot można podejrzeć w zakładce My Items pod adresem ``https://localhost:7046/Item/MyItems``. 
+Dodany przedmiot można podejrzeć w zakładce ``My Items`` pod adresem ``https://localhost:7046/Item/MyItems``. 
 
 ![Widok dodanych przedmiotów](/myitems.png)
 
 ### Wyszukiwanie i kupowanie przedmiotów
 
-Aby zobaczyć aktualne oferty przedmiotów należy wejść w zakładkę Items znajdującą się pod adresem ``https://localhost:7046/Item``. Dostępna jest wyszukiwarka w której można dokonać filtowania przedmiotów na podstawie nazw oraz przedziału cenowego.
+Aby zobaczyć aktualne oferty przedmiotów należy wejść w zakładkę ``Items`` znajdującą się pod adresem ``https://localhost:7046/Item``. Dostępna jest wyszukiwarka w której można dokonać filtowania przedmiotów na podstawie nazw oraz przedziału cenowego.
 
 ![Widok przedmiotów](/items.png)
 
@@ -57,3 +60,11 @@ Po kliknięciu w przycisk w kolejnej stronie należy wypełnić szczegóły zam�
 Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone a przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``.
 
 ![Widok szczegółów zatwierdzonego zamówienia](/myorders.png)
+
+
+
+### Panel Admina
+
+Aby skorzystać z panelu admina należy skorzystać z zakładki ``Admin Panel`` znajdującej się pod adresem:  ``https://localhost:7046/Admin``. Dostęp do panelu jest możliwy tylko dla konta z uprawnieniami administratora. 
+
+![Widok panelu admina](/admin.png)
