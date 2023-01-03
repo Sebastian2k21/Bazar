@@ -59,7 +59,7 @@ Po kliknięciu w przycisk w kolejnej stronie należy wypełnić szczegóły zam�
 
 Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone a przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``.
 
-![Widok szczegółów zatwierdzonego zamówienia](/myorders.png)
+![Widok szczegółów zatwierdzonego zamówienia](/myorders.PNG)
 
 
 
@@ -67,4 +67,4 @@ Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone a przedm
 
 Aby skorzystać z panelu admina należy skorzystać z zakładki ``Admin Panel`` znajdującej się pod adresem:  ``https://localhost:7046/Admin``. Dostęp do panelu jest możliwy tylko dla konta z uprawnieniami administratora. 
 
-![Widok panelu admina](/admin.png)
+![Widok panelu admina](/admin.PNG)
