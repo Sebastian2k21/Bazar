@@ -23,3 +23,37 @@ Strona znajduje się pod adresem: ``https://localhost:7046``, aby zalogować si�
 Aby skorzystać z aplikacji należy wykorzystać przygotowane dane logowania lub stworzyć nowego użytkownika za pomocą formularza rejestracji wchodząc pod adres ``https://localhost:7046/Register``
 
 ![Formularz rejestracji](/register.png)
+
+
+### Logowanie
+Logowanie znajduje się pod adresem: ``https://localhost:7046/Login``. Należy podać adres email użytkownika i hasło.
+
+![Formularz logowania](/login.png)
+
+### Dodawanie przedmiotu
+Dodawanie przedmiotu znajduje się pod adresem: ``https://localhost:7046/Item/Create``. Użytkownik powinien być zalogowany. Należy obowiązkowo wprowadzić: nazwe, cenę oraz kategorię. 
+
+![Formularz dodawania przedmiotu](/additem.png)
+
+Dodany przedmiot można podejrzeć w zakładce My Items pod adresem ``https://localhost:7046/Item/MyItems``. 
+
+![Widok dodanych przedmiotów](/myitems.png)
+
+### Wyszukiwanie i kupowanie przedmiotów
+
+Aby zobaczyć aktualne oferty przedmiotów należy wejść w zakładkę Items znajdującą się pod adresem ``https://localhost:7046/Item``. Dostępna jest wyszukiwarka w której można dokonać filtowania przedmiotów na podstawie nazw oraz przedziału cenowego.
+
+![Widok przedmiotów](/items.png)
+
+Aby dokonać zakupu należy wybrać z listy interesujący przedmiot i po przejściu na stronę szczegółów wcisnąć przycisk ``Buy now``.
+
+
+![Widok szczegółów przedmiotu](/details.png)
+
+Po kliknięciu w przycisk w kolejnej stronie należy wypełnić szczegóły zamówienia takie jak: imię nazwisko zamawiającego, adres dostawy, email, telefon, komentarz do sprzedawcy, metoda płatności i sposób wysyłki.
+
+![Widok szczegółów zamówienia](/order.png)
+
+Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone a przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``.
+
+![Widok szczegółów zatwierdzonego zamówienia](/myorders.png)
