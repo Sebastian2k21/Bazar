@@ -36,7 +36,7 @@ Po wysłaniu formularza w przypadku ustawienia poprawnych danych użytkownik jes
 
 ### Logowanie
 
-Do strony z logowaniem: ``https://localhost:7046/Login`` ma dostęp dowolny użytkownik. Należy podać adres email użytkownika i hasło.
+Do strony z logowaniem: ``https://localhost:7046/Login`` ma dostęp dowolny użytkownik. Należy podać adres email i hasło.
 
 ![Formularz logowania](/login.png)
 
@@ -66,13 +66,13 @@ Na kolejnej stronie należy wypełnić szczegóły zamówienia takie jak: imię 
 
 ![Widok szczegółów zamówienia](/order.png)
 
-Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone. Użytkownik jest przekierowany do strong: ````https://localhost:7046/Item``. Przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``, która jest dostępna dla osób posiadających konto w serwisie.
+Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone. Użytkownik jest przekierowany do strony: ``https://localhost:7046/Item``. Przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``, która jest dostępna dla osób posiadających konto w serwisie.
 
 ![Widok szczegółów zatwierdzonego zamówienia](/myorders.PNG)
 
 ### Panel Admina
 
 Dostęp do panelu administratora jest dostępny tylko dla użytkowników posiadających konto w serwisie z uprawieniami aministratora.
-Aby skorzystać z panelu należy skorzystać z zakładki ``Admin Panel`` znajdującej się pod adresem:  ``https://localhost:7046/Admin``.
+Aby użyć panelu należy skorzystać z zakładki ``Admin Panel`` znajdującej się pod adresem:  ``https://localhost:7046/Admin``.
 
 ![Widok panelu admina](/admin.PNG)
