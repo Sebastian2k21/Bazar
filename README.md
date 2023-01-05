@@ -18,53 +18,61 @@ Strona znajduje się pod adresem: ``https://localhost:7046``, aby zalogować si�
 	Login: admin@bazar.pl
 	Hasło: Admin123
 
-## Instrukcja użytkownika
+## Opis projektu
 
+### Wyszukiwanie przedmiotów
+
+Dowolny użytkownik może zobaczyć aktualne oferty przedmiotów. Należy wejść w zakładkę ``Items`` znajdującą się pod adresem ``https://localhost:7046/Item``. Dostępna jest wyszukiwarka w której można dokonać filtowania przedmiotów na podstawie nazw oraz przedziału cenowego.
+
+![Widok przedmiotów](/items.png)
 
 ### Rejestracja
 
-Aby skorzystać z aplikacji należy wykorzystać przygotowane dane logowania lub stworzyć nowego użytkownika za pomocą formularza rejestracji wchodząc pod adres ``https://localhost:7046/Register``
+Dowolny użytkownik ma dostęp do strony ``https://localhost:7046/Register`` na której w formularzu zostawia dane logowania: adres email i hasło. 
 
 ![Formularz rejestracji](/register.png)
 
+Po wysłaniu formularza w przypadku ustawienia poprawnych danych użytkownik jest przenoszony do strony z formularzem logowania ``https://localhost:7046/Login``.
 
 ### Logowanie
-Logowanie znajduje się pod adresem: ``https://localhost:7046/Login``. Należy podać adres email użytkownika i hasło.
+
+Do strony z logowaniem: ``https://localhost:7046/Login`` ma dostęp dowolny użytkownik. Należy podać adres email użytkownika i hasło.
 
 ![Formularz logowania](/login.png)
 
+Po przesłaniu formularza w przypadku podania poprawnych danych logowania użytkownik jest przenoszony pod adres: ``https://localhost:7046/`` gdzie znajduje się strona powitalna aplikacji.
+
 ### Dodawanie przedmiotu
-Dodawanie przedmiotu znajduje się w zakładce ``Sell Item`` pod adresem: ``https://localhost:7046/Item/Create``. Użytkownik powinien być zalogowany. Należy obowiązkowo wprowadzić: nazwe, cenę oraz kategorię. 
+Użytkownik posiadjący konto w serwisie może dodawać nowe oferty. Wystawienie przedmiotu znajduje się w zakładce ``Sell Item`` pod adresem: ``https://localhost:7046/Item/Create``. Należy obowiązkowo wprowadzić: nazwe, cenę oraz kategorię. 
 
 ![Formularz dodawania przedmiotu](/additem.png)
 
+Po przesłaniu formularza użytkownik jest przekierowany na stronę z aktualnie dostępnymi przedmiotami: ``https://localhost:7046/Item``.
 Dodany przedmiot można podejrzeć w zakładce ``My Items`` pod adresem ``https://localhost:7046/Item/MyItems``. 
 
 ![Widok dodanych przedmiotów](/myitems.png)
 
-### Wyszukiwanie i kupowanie przedmiotów
+Przykładowo pod adresem ``https://localhost:7046/Item/Details/5`` znajduje się oferta przedmiotu o ID nr 5.
 
-Aby zobaczyć aktualne oferty przedmiotów należy wejść w zakładkę ``Items`` znajdującą się pod adresem ``https://localhost:7046/Item``. Dostępna jest wyszukiwarka w której można dokonać filtowania przedmiotów na podstawie nazw oraz przedziału cenowego.
+### Kupowanie przedmiotów
 
-![Widok przedmiotów](/items.png)
-
-Aby dokonać zakupu należy wybrać z listy interesujący przedmiot i po przejściu na stronę szczegółów wcisnąć przycisk ``Buy now``.
+Kupowanie jest dostępne tylko dla użytkownika posiadającego konto w serwisie. Aby dokonać zakupu należy wybrać z listy  ``https://localhost:7046/Item`` interesujący przedmiot (np. wejść pod adres ``https://localhost:7046/Item/Details/5``) i po przejściu na stronę szczegółów wcisnąć przycisk ``Buy now``.
 
 
 ![Widok szczegółów przedmiotu](/details.png)
 
-Po kliknięciu w przycisk w kolejnej stronie należy wypełnić szczegóły zamówienia takie jak: imię nazwisko zamawiającego, adres dostawy, email, telefon, komentarz do sprzedawcy, metoda płatności i sposób wysyłki.
+Po kliknięciu w przycisk użytkownik jest przekierowany pod adres ``https://localhost:7046/Order/Buy/5`` (przykład dla przedmiotu o ID 5).
+Na kolejnej stronie należy wypełnić szczegóły zamówienia takie jak: imię nazwisko zamawiającego, adres dostawy, email, telefon, komentarz do sprzedawcy, metoda płatności i sposób wysyłki.
 
 ![Widok szczegółów zamówienia](/order.png)
 
-Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone a przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``.
+Po kliknięciu w przycisk ``Buy Now!`` zamówienie zostaje potwierdzone. Użytkownik jest przekierowany do strong: ````https://localhost:7046/Item``. Przedmiot można odszukać w zakładce My Orders pod adresem: ``https://localhost:7046/Order``, która jest dostępna dla osób posiadających konto w serwisie.
 
 ![Widok szczegółów zatwierdzonego zamówienia](/myorders.PNG)
 
-
-
 ### Panel Admina
 
-Aby skorzystać z panelu admina należy skorzystać z zakładki ``Admin Panel`` znajdującej się pod adresem:  ``https://localhost:7046/Admin``. Dostęp do panelu jest możliwy tylko dla konta z uprawnieniami administratora. 
+Dostęp do panelu administratora jest dostępny tylko dla użytkowników posiadających konto w serwisie z uprawieniami aministratora.
+Aby skorzystać z panelu należy skorzystać z zakładki ``Admin Panel`` znajdującej się pod adresem:  ``https://localhost:7046/Admin``.
 
 ![Widok panelu admina](/admin.PNG)
