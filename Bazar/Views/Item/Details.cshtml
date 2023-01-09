@@ -3,83 +3,87 @@
 @model ItemDetailsViewModel
 @inject SignInManager<User> signInManager;
 
-<table class="table table-stripped">
-    <tr>
-        <td>
-            Name
-        </td>
-        <td>
-            @Model.Name @if (Model.IsNew)
+<div class="row">
+    <div class="col">
+        <table class="table table-stripped">
+            <tr>
+                <td>
+                    Name
+                </td>
+                <td>
+                    @Model.Name @if (Model.IsNew)
+                    {
+                        <span class="badge bg-success">New</span>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>@Model.Description</td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td>@Model.Price zł</td>
+            </tr>
+            @if (Model.PickupInPerson)
             {
-                <span class="badge bg-success">New</span>
-            }
-        </td>
-    </tr>
-    <tr>
-        <td>Description</td>
-        <td>@Model.Description</td>
-    </tr>
-    <tr>
-        <td>Price</td>
-        <td>@Model.Price zł</td>
-    </tr>
-    @if (Model.PickupInPerson)
-    {
-        <tr>
-            <td>Pickup in person</td>
-            <td>
-                <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
-            </td>
-        </tr>
-    }
-    else
-    {
-        <tr>
-            <td>Pickup in person</td>
-            <td></td>
-        </tr>
-    }
-
-    @if (Model.CourierDelivery)
-    {
-        <tr>
-            <td>Courier Delivery</td>
-            <td>
-                <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
-            </td>
-        </tr>
-    }
-    else
-    {
-        <tr>
-            <td>Courier Delivery</td>
-            <td></td>
-        </tr>
-    }
-
-    <tr>
-        <td>Category</td>
-        <td>@Model.CategoryName</td>
-    </tr>
-
-    <tr>
-        <td>Owner</td>
-        <td>@Model.OwnerName</td>
-    </tr>
-
-    @if (ViewBag.CanBuy)
-    {
-        <tr>
-            <td></td>
-            @if (!signInManager.IsSignedIn(User))
-            {
-                 <td><a asp-controller="Login" asp-action="Index" asp-route-message="Log in to buy item" class="btn btn-success">Buy now</a></td>
+                <tr>
+                    <td>Pickup in person</td>
+                    <td>
+                        <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
+                    </td>
+                </tr>
             }
             else
             {
-                <td><a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn btn-success">Buy now</a></td>
-
+                <tr>
+                    <td>Pickup in person</td>
+                    <td></td>
+                </tr>
             }
-        </tr>
-    }
-</table>
+
+            @if (Model.CourierDelivery)
+            {
+                <tr>
+                    <td>Courier Delivery</td>
+                    <td>
+                        <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td>Courier Delivery</td>
+                    <td></td>
+                </tr>
+            }
+
+            <tr>
+                <td>Category</td>
+                <td>@Model.CategoryName</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-2 owner">
+        <div>
+            <span>Owner: </span>
+            <span>@Model.OwnerName</span>
+        </div>
+
+        @if (ViewBag.CanBuy)
+        {
+            <div>
+                @if (!signInManager.IsSignedIn(User))
+                {
+                   <a asp-controller="Login" asp-action="Index" asp-route-message="Log in to buy item" class="btn btn-success">Buy now</a>
+                }
+                else
+                {
+                    <a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn btn-success">Buy now</a>
+
+                }
+            </div>
+        }
+    </div>
+</div>

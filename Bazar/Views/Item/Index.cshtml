@@ -1,49 +1,54 @@
 ﻿@using Bazar.Data.Models
 @model List<Item>
 
-<div class="row">
-    <div class="col">
-        <div class="row">
-            <div class="col-sm-auto align-self-center">Search</div>
-            <div class="col align-self-center"><input id="search_text" class="form-control" /></div>
-        </div>
+<div class="custom-box">
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col-sm-auto align-self-center">Search</div>
+                <div class="col align-self-center"><input id="search_text" class="form-control" /></div>
+            </div>
 
-    </div>
-    <div class="col">
-        <div class="row ">
-            <div class="col-sm-auto align-self-center">From</div>
-            <div class="col">   <input id="price_from" type="number" class="form-control align-self-center" /></div>
-            <div class="col-sm-auto align-self-center">zł</div>
         </div>
+        <div class="col">
+            <div class="row ">
+                <div class="col-sm-auto align-self-center">From</div>
+                <div class="col">   <input id="price_from" type="number" class="form-control align-self-center" /></div>
+                <div class="col-sm-auto align-self-center">zł</div>
+            </div>
 
 
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col-sm-auto align-self-center">To</div>
-            <div class="col align-self-center">   <input id="price_to" type="number" class="form-control" /></div>
-            <div class="col-sm-auto align-self-center">zł</div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col-sm-auto align-self-center">To</div>
+                <div class="col align-self-center">   <input id="price_to" type="number" class="form-control" /></div>
+                <div class="col-sm-auto align-self-center">zł</div>
+            </div>
+        </div>
+        <div class="col">
+            <button id="search_button" class="btn form-button button-right align-self-center"><i class="bi bi-search"></i></button>
         </div>
     </div>
-    <div class="col">
-        <button id="search_button" class="btn btn-info align-self-center"><i class="bi bi-search"></i></button>
-    </div>
+
 </div>
-
-<table class="table striped">
-    <thed>
-        <tr>
-            <th>Name</th>
-            <th>Price</th>
-        </tr>
-    </thed>
-    <tbody id="tableBody">
-        @foreach (var item in Model)
-        {
-            <tr data-aos="flip-left">
-                <td><a asp-action="Details" asp-route-id="@item.Id">@item.Name</a></td>
-                <td>@item.Price</td>
+<br />
+<div class="custom-box">
+    <table class="table striped">
+        <thed>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thed>
+        <tbody id="tableBody">
+            @foreach (var item in Model)
+            {
+                <tr data-aos="flip-left">
+                    <td><a asp-action="Details" asp-route-id="@item.Id">@item.Name</a></td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

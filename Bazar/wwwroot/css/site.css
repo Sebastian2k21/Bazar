@@ -1,5 +1,11 @@
+:root {
+    --colorC: white;
+    --colorD: #FF5A00;
+    --colorE: #ECEFF1;
+}
+
 html {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media (min-width: 768px) {
@@ -15,4 +21,54 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: var(--colorE);
+}
+
+.navbar-color {
+    background-color: var(--colorD);
+}
+
+owner {
+    border: 1px solid white;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-box {
+    background-color: var(--colorC);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.form-view {
+    background-color: var(--colorC);
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 450px;
+    max-width: 500px;
+}
+
+.form-button {
+    background-color: var(--colorD);
+    color: var(--colorC);
+    letter-spacing: 2px;
+    width: 50%;
+}
+
+.button-right {
+    position: relative;
+    right: -50%;
+}
+
+.custom-nav {
+    color: var(--colorC);
+    letter-spacing: 1px;
+}
+
+input[type=checkbox] {
+    accent-color: var(--colorD);
 }
