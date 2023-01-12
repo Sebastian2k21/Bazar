@@ -1,48 +1,50 @@
 ﻿@model OrderDetailsViewModel
 
-<table class="table table-stripped">
-    <tr>
-        <td>
-            Name 
-        </td>
-        <td>
-            <a asp-controller="Item" asp-action="Details" asp-route-id="@Model.ItemId">@Model.ItemName</a>
-        </td>
-    </tr>
-    <tr>
-        <td>Date</td>
-        <td>@Model.Date</td>
-    </tr>
-    <tr>
-        <td>Street </td>
-        <td>@Model.BuyerStreet</td>
-    </tr>
-    <tr>
-        <td>City</td>
-        <td>@Model.BuyerCity </td>
-    </tr>
-    <tr>
-        <td>Email</td>
-        <td>@Model.BuyerEmail </td>
-    </tr>
-    <tr>
-        <td>Phone</td>
-        <td>@Model.BuyerPhone </td>
-    </tr>
-    <tr>
-        <td>Full name</td>
-        <td>@Model.BuyerFullName </td>
-    </tr>
-    <tr>
-        <td>Comment</td>
-        <td>@Model.Comment</td>
-    </tr>
-    <tr>
-        <td>Payment</td>
-        <td>@Model.PaymentMethodName </td>
-    </tr>
-    <tr>
-        <td>Delivery</td>
-        <td>@Model.DeliveryMethodName </td>
-    </tr>
-</table>
+<div class="custom-box">
+    <table class="table table-stripped">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                <a asp-controller="Item" asp-action="Details" asp-route-id="@Model.ItemId">@Model.ItemName</a>
+            </td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>@Model.Date</td>
+        </tr>
+        <tr>
+            <td>Street </td>
+            <td>@Model.BuyerStreet</td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td>@Model.BuyerCity </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>@Model.BuyerEmail </td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>@Model.BuyerPhone </td>
+        </tr>
+        <tr>
+            <td>Full name</td>
+            <td>@Model.BuyerFullName </td>
+        </tr>
+        <tr>
+            <td>Comment</td>
+            <td>@Model.Comment</td>
+        </tr>
+        <tr>
+            <td>Payment</td>
+            <td>@Model.PaymentMethodName </td>
+        </tr>
+        <tr>
+            <td>Delivery</td>
+            <td>@Model.DeliveryMethodName </td>
+        </tr>
+    </table>
+</div>

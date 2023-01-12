@@ -1,47 +1,52 @@
 ﻿@model OrderViewModel
 
-<h5>Kupujesz przedmiot: @ViewBag.Item.Name (@ViewBag.Item.Price zł)</h5>
 
-<form method="POST">
-    <div>
-        <label asp-for="BuyerFullName"></label>
-        <input asp-for="BuyerFullName" class="form-control" />
-        <span asp-validation-for="BuyerFullName" class="text-danger"></span>
+<div class="main-container ">
+    <div class="form-view">
+        <h5>Kupujesz przedmiot: @ViewBag.Item.Name (@ViewBag.Item.Price zł)</h5>
+        <form method="POST">
+            <div>
+                <label asp-for="BuyerFullName"></label>
+                <input asp-for="BuyerFullName" class="form-control" />
+                <span asp-validation-for="BuyerFullName" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="BuyerEmail"></label>
+                <input asp-for="BuyerEmail" class="form-control" />
+                <span asp-validation-for="BuyerEmail" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="BuyerPhone"></label>
+                <input asp-for="BuyerPhone" class="form-control" />
+                <span asp-validation-for="BuyerPhone" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="BuyerStreet"></label>
+                <input asp-for="BuyerStreet" class="form-control" />
+                <span asp-validation-for="BuyerStreet" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="BuyerCity"></label>
+                <input asp-for="BuyerCity" class="form-control" />
+                <span asp-validation-for="BuyerCity" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Comment"></label>
+                <textarea asp-for="Comment" class="form-control"></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="DeliveryMethodId"></label>
+                <select asp-for="DeliveryMethodId" class="form-control" asp-items="@ViewBag.DeliveryMethods"></select>
+                <span asp-validation-for="DeliveryMethodId" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="PaymentMethodId"></label>
+                <select asp-for="PaymentMethodId" class="form-control" asp-items="@ViewBag.PaymentMethods"></select>
+                <span asp-validation-for="PaymentMethodId" class="text-danger"></span>
+            </div>
+            <br />
+            <button class="btn form-button button-right">Buy now!</button>
+        </form>
     </div>
-    <div>
-        <label asp-for="BuyerEmail"></label>
-        <input asp-for="BuyerEmail" class="form-control"/>
-        <span asp-validation-for="BuyerEmail" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="BuyerPhone"></label>
-        <input asp-for="BuyerPhone" class="form-control" />
-        <span asp-validation-for="BuyerPhone" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="BuyerStreet"></label>
-        <input asp-for="BuyerStreet" class="form-control" />
-        <span asp-validation-for="BuyerStreet" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="BuyerCity"></label>
-        <input asp-for="BuyerCity" class="form-control" />
-        <span asp-validation-for="BuyerCity" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="Comment"></label>
-        <textarea asp-for="Comment" class="form-control"></textarea>
-        <span asp-validation-for="Comment" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="DeliveryMethodId"></label>
-        <select asp-for="DeliveryMethodId" class="form-control" asp-items="@ViewBag.DeliveryMethods"></select>
-        <span asp-validation-for="DeliveryMethodId" class="text-danger"></span>
-    </div>
-    <div>
-        <label asp-for="PaymentMethodId"></label>
-        <select asp-for="PaymentMethodId" class="form-control" asp-items="@ViewBag.PaymentMethods"></select>
-        <span asp-validation-for="PaymentMethodId" class="text-danger"></span>
-    </div>
-    <button class="btn btn-success">Buy now!</button>
-</form>
+</div>

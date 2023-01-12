@@ -286,7 +286,17 @@ namespace Bazar.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cc05fc2b-da9e-431d-a9dc-254c620de471", 0, "7b8f4b5b-80dc-4275-8331-ca552dc9a2d7", "admin@bazar.pl", true, false, null, "ADMIN@BAZAR.PL", "ADMIN", "AQAAAAEAACcQAAAAEHslAsiDUzQSe3C6Pa/OaWl3HrTvGVh4xPKVNC5epHaZHECPTpebA9R0rTVqqknWgQ==", null, false, "9cd5719e-04a6-41c4-91af-a762759806cc", false, "admin" });
+                values: new object[] { "3087acd6-3b79-426a-ad68-d12ef842485b", 0, "44aa2f9c-5a33-4a46-a22d-cc75f96014b0", "patrycja02@bazar.pl", true, false, null, "PATRYCJA02@BAZAR.PL", "PATRYCJA", "AQAAAAEAACcQAAAAEIzsXrjIFPN8rA48Zz8r6uypJZIzRRPQ3/QnVMH0/dXV+YCUAATTYAqCrCAW31P4tg==", null, false, "d8c17292-6367-45c8-8863-93984bfc4a6c", false, "Patrycja" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "99d9c392-94a9-4faa-bf54-296d6c871ced", 0, "890fdb4c-10b6-44b5-9e8e-b64bf206cc74", "kamil.01@interia.pl", true, false, null, "KAMIL.01@INTERIA.PL", "KAMIL", "AQAAAAEAACcQAAAAEN+OlPQ4BzS30WidFFpLudW+38zV7uUGg7JvDNJAoLQcl9W69hFknhetGvzyPLJzyw==", null, false, "f502450e-9f8e-4afe-8b50-440e1747d544", false, "Kamil" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "cc05fc2b-da9e-431d-a9dc-254c620de471", 0, "7b8f4b5b-80dc-4275-8331-ca552dc9a2d7", "admin@bazar.pl", true, false, null, "ADMIN@BAZAR.PL", "ADMIN", "AQAAAAEAACcQAAAAEBjU+pE7PltQz+wleBHEscq72IBTN1uGKDjfy+56pdI7ZZa+EqcXkhXhktsEL1/s0w==", null, false, "be3038dc-e2a8-465d-ad29-2e4ff270ae04", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -327,6 +337,21 @@ namespace Bazar.Migrations
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 8, "Sport" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 9, "Komputery" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 10, "Monitory" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 11, "Części do komputerów" });
 
             migrationBuilder.InsertData(
                 table: "DeliveryMethods",
@@ -376,6 +401,16 @@ namespace Bazar.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "9244da6e-9e04-440a-b6ae-9d93cbea9aa5", "3087acd6-3b79-426a-ad68-d12ef842485b" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[] { "9244da6e-9e04-440a-b6ae-9d93cbea9aa5", "99d9c392-94a9-4faa-bf54-296d6c871ced" });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
                 values: new object[] { "8e91c187-f152-4ea9-a39d-e1615dbb6419", "cc05fc2b-da9e-431d-a9dc-254c620de471" });
 
             migrationBuilder.InsertData(
@@ -386,12 +421,22 @@ namespace Bazar.Migrations
             migrationBuilder.InsertData(
                 table: "Items",
                 columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
-                values: new object[] { 2, 1, false, "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Black", false, "Telefon Samsung Galaxy S21 Ultra 5G", false, 5999.0, false, "cc05fc2b-da9e-431d-a9dc-254c620de471" });
+                values: new object[] { 2, 10, false, "Acer Nitro VG240YBMIIX to monitor dedykowany graczom. Dzięki wysokiemu kontrastowi w ciemnych scenach czernie będą głębsze. Minusem jest niskie pokrycie kolorów. ", false, "Acer Nitro VG240YBMIIX czarny", false, 599.0, false, "99d9c392-94a9-4faa-bf54-296d6c871ced" });
 
             migrationBuilder.InsertData(
                 table: "Items",
                 columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
-                values: new object[] { 3, 1, false, "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Silver", true, "Telefon Samsung Galaxy S21 Ultra 5G", true, 5999.0, false, "cc05fc2b-da9e-431d-a9dc-254c620de471" });
+                values: new object[] { 3, 11, false, "Przeznaczony do domowych i gamingowych komputerów stacjonarnych procesor AMD Ryzen 5 5600 obsłuży wymagające gry oraz zapewni obsługę zadań wielowątkowych, takich jak np. renderowanie 3D i wideo. 6 rdzeni, 12 wątków, częstotliwość taktowania do 4,4 GHz oraz 35 MB pamięci cache sprawiają, że ten CPU zapewnia najwyższą wydajność. ", true, "AMD Ryzen 5 5600", true, 699.0, false, "3087acd6-3b79-426a-ad68-d12ef842485b" });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
+                values: new object[] { 4, 9, false, "Cenisz sobie swobodę i elastyczność, jaką daje Ci zdalna praca, ale wymagasz wygody i niezawodności od swojego sprzętu? Odkryj Inspirona 15 z serii 5000 – laptopa, który dotrzyma Ci kroku.", true, "Dell Inspiron 5515 Ryzen 5 5500U/16GB/512/Win11", true, 3399.0, false, "3087acd6-3b79-426a-ad68-d12ef842485b" });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
+                values: new object[] { 5, 11, false, "Zamontuj dysk SSD WD Blue SN570 o pojemności 1 TB w swoim komputerze lub laptopie i przyspiesz znacząco jego działanie. Dysk ten jest nawet 5-krotnie szybszy w porównaniu do najbardziej wydajnych dysków SSD SATA.", true, "WD 1TB M.2 PCIe NVMe Blue SN570", false, 299.0, false, "99d9c392-94a9-4faa-bf54-296d6c871ced" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -4,7 +4,7 @@
 @inject SignInManager<User> signInManager;
 
 <div class="row">
-    <div class="col">
+    <div class="col-8 custom-box">
         <table class="table table-stripped">
             <tr>
                 <td>
@@ -30,7 +30,9 @@
                 <tr>
                     <td>Pickup in person</td>
                     <td>
-                        <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                        </svg>
                     </td>
                 </tr>
             }
@@ -47,7 +49,9 @@
                 <tr>
                     <td>Courier Delivery</td>
                     <td>
-                        <i style="color: greenyellow" class="bi bi-check-lg fa-10x"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+  <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+</svg>
                     </td>
                 </tr>
             }
@@ -65,7 +69,7 @@
             </tr>
         </table>
     </div>
-    <div class="col-2 owner">
+    <div class="col-2 owner custom-box" style="margin-left: 15px">
         <div>
             <span>Owner: </span>
             <span>@Model.OwnerName</span>
@@ -73,14 +77,15 @@
 
         @if (ViewBag.CanBuy)
         {
+            <br />
             <div>
                 @if (!signInManager.IsSignedIn(User))
                 {
-                   <a asp-controller="Login" asp-action="Index" asp-route-message="Log in to buy item" class="btn btn-success">Buy now</a>
+                    <a asp-controller="Login" asp-action="Index" asp-route-message="Log in to buy item" class="btn form-button" style="width: 100%">Buy now</a>
                 }
                 else
                 {
-                    <a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn btn-success">Buy now</a>
+                    <a asp-controller="Order" asp-action="Buy" asp-route-id="@(ViewContext.RouteData.Values["id"])" class="btn form-button" style="width: 100%">Buy now</a>
 
                 }
             </div>

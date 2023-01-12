@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bazar.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221229141033_init")]
+    [Migration("20230112142838_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,21 @@ namespace Bazar.Migrations
                         {
                             Id = 8,
                             Name = "Sport"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Komputery"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Monitory"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "Części do komputerów"
                         });
                 });
 
@@ -177,28 +192,54 @@ namespace Bazar.Migrations
                         new
                         {
                             Id = 2,
-                            CategoryId = 1,
+                            CategoryId = 10,
                             CourierDelivery = false,
-                            Description = "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Black",
+                            Description = "Acer Nitro VG240YBMIIX to monitor dedykowany graczom. Dzięki wysokiemu kontrastowi w ciemnych scenach czernie będą głębsze. Minusem jest niskie pokrycie kolorów. ",
                             IsNew = false,
-                            Name = "Telefon Samsung Galaxy S21 Ultra 5G",
+                            Name = "Acer Nitro VG240YBMIIX czarny",
                             PickupInPerson = false,
-                            Price = 5999.0,
+                            Price = 599.0,
                             Sold = false,
-                            UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471"
+                            UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced"
                         },
                         new
                         {
                             Id = 3,
-                            CategoryId = 1,
+                            CategoryId = 11,
                             CourierDelivery = false,
-                            Description = "Telefon Samsung Galaxy S21 Ultra 5G 128GB Phantom Silver",
+                            Description = "Przeznaczony do domowych i gamingowych komputerów stacjonarnych procesor AMD Ryzen 5 5600 obsłuży wymagające gry oraz zapewni obsługę zadań wielowątkowych, takich jak np. renderowanie 3D i wideo. 6 rdzeni, 12 wątków, częstotliwość taktowania do 4,4 GHz oraz 35 MB pamięci cache sprawiają, że ten CPU zapewnia najwyższą wydajność. ",
                             IsNew = true,
-                            Name = "Telefon Samsung Galaxy S21 Ultra 5G",
+                            Name = "AMD Ryzen 5 5600",
                             PickupInPerson = true,
-                            Price = 5999.0,
+                            Price = 699.0,
                             Sold = false,
-                            UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471"
+                            UserId = "3087acd6-3b79-426a-ad68-d12ef842485b"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 9,
+                            CourierDelivery = false,
+                            Description = "Cenisz sobie swobodę i elastyczność, jaką daje Ci zdalna praca, ale wymagasz wygody i niezawodności od swojego sprzętu? Odkryj Inspirona 15 z serii 5000 – laptopa, który dotrzyma Ci kroku.",
+                            IsNew = true,
+                            Name = "Dell Inspiron 5515 Ryzen 5 5500U/16GB/512/Win11",
+                            PickupInPerson = true,
+                            Price = 3399.0,
+                            Sold = false,
+                            UserId = "3087acd6-3b79-426a-ad68-d12ef842485b"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CategoryId = 11,
+                            CourierDelivery = false,
+                            Description = "Zamontuj dysk SSD WD Blue SN570 o pojemności 1 TB w swoim komputerze lub laptopie i przyspiesz znacząco jego działanie. Dysk ten jest nawet 5-krotnie szybszy w porównaniu do najbardziej wydajnych dysków SSD SATA.",
+                            IsNew = true,
+                            Name = "WD 1TB M.2 PCIe NVMe Blue SN570",
+                            PickupInPerson = false,
+                            Price = 299.0,
+                            Sold = false,
+                            UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced"
                         });
                 });
 
@@ -385,11 +426,43 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@BAZAR.PL",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHslAsiDUzQSe3C6Pa/OaWl3HrTvGVh4xPKVNC5epHaZHECPTpebA9R0rTVqqknWgQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEBjU+pE7PltQz+wleBHEscq72IBTN1uGKDjfy+56pdI7ZZa+EqcXkhXhktsEL1/s0w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "9cd5719e-04a6-41c4-91af-a762759806cc",
+                            SecurityStamp = "be3038dc-e2a8-465d-ad29-2e4ff270ae04",
                             TwoFactorEnabled = false,
                             UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = "99d9c392-94a9-4faa-bf54-296d6c871ced",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "890fdb4c-10b6-44b5-9e8e-b64bf206cc74",
+                            Email = "kamil.01@interia.pl",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "KAMIL.01@INTERIA.PL",
+                            NormalizedUserName = "KAMIL",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN+OlPQ4BzS30WidFFpLudW+38zV7uUGg7JvDNJAoLQcl9W69hFknhetGvzyPLJzyw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f502450e-9f8e-4afe-8b50-440e1747d544",
+                            TwoFactorEnabled = false,
+                            UserName = "Kamil"
+                        },
+                        new
+                        {
+                            Id = "3087acd6-3b79-426a-ad68-d12ef842485b",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "44aa2f9c-5a33-4a46-a22d-cc75f96014b0",
+                            Email = "patrycja02@bazar.pl",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "PATRYCJA02@BAZAR.PL",
+                            NormalizedUserName = "PATRYCJA",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIzsXrjIFPN8rA48Zz8r6uypJZIzRRPQ3/QnVMH0/dXV+YCUAATTYAqCrCAW31P4tg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "d8c17292-6367-45c8-8863-93984bfc4a6c",
+                            TwoFactorEnabled = false,
+                            UserName = "Patrycja"
                         });
                 });
 
@@ -524,6 +597,16 @@ namespace Bazar.Migrations
                         {
                             UserId = "cc05fc2b-da9e-431d-a9dc-254c620de471",
                             RoleId = "8e91c187-f152-4ea9-a39d-e1615dbb6419"
+                        },
+                        new
+                        {
+                            UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced",
+                            RoleId = "9244da6e-9e04-440a-b6ae-9d93cbea9aa5"
+                        },
+                        new
+                        {
+                            UserId = "3087acd6-3b79-426a-ad68-d12ef842485b",
+                            RoleId = "9244da6e-9e04-440a-b6ae-9d93cbea9aa5"
                         });
                 });
 
