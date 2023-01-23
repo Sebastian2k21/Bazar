@@ -21,6 +21,12 @@ namespace Bazar.Data.Seeders
                 new Category { Id = 9, Name = "Komputery"},
                 new Category { Id = 10, Name = "Monitory"},
                 new Category { Id = 11, Name = "Części do komputerów"},
+                new Category { Id = 12, Name = "AGD"},
+                new Category { Id = 13, Name = "Dom i ogród"},
+                new Category { Id = 14, Name = "Moda"},
+                new Category { Id = 15, Name = "Zdrowie"},
+                new Category { Id = 16, Name = "Książki"},
+                new Category { Id = 17, Name = "Muzyka"},
             });
         }
 
@@ -164,6 +170,16 @@ namespace Bazar.Data.Seeders
                     Name = "WD 1TB M.2 PCIe NVMe Blue SN570",
                     Description = "Zamontuj dysk SSD WD Blue SN570 o pojemności 1 TB w swoim komputerze lub laptopie i przyspiesz znacząco jego działanie. Dysk ten jest nawet 5-krotnie szybszy w porównaniu do najbardziej wydajnych dysków SSD SATA.",
                     Price = 299,
+                    CategoryId = 11,
+                    UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced",
+                    IsNew = true,
+                },
+                 new Item
+                {
+                    Id = 6,
+                    Name = "Klawiatura membranowa GK-120DL",
+                    Description = "Klawiatura Werewolf to idealna propozycja dla każdego gracza. Klasyczny skok przycisków pozwala na bardzo wygodne użytkowanie w najcięższych warunkach. Urozmaiceniem wizualnym jest tęczowe podświetlenie klawiszy diodami, co uprzyjemni użytkowanie naszej klawiatury podczas gamingowych maratonów..",
+                    Price = 87,
                     CategoryId = 11,
                     UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced",
                     IsNew = true,

@@ -87,6 +87,36 @@ namespace Bazar.Migrations
                         {
                             Id = 11,
                             Name = "Części do komputerów"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "AGD"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Name = "Dom i ogród"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Name = "Moda"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Name = "Zdrowie"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Name = "Książki"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Name = "Muzyka"
                         });
                 });
 
@@ -236,6 +266,19 @@ namespace Bazar.Migrations
                             Name = "WD 1TB M.2 PCIe NVMe Blue SN570",
                             PickupInPerson = false,
                             Price = 299.0,
+                            Sold = false,
+                            UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CategoryId = 11,
+                            CourierDelivery = false,
+                            Description = "Klawiatura Werewolf to idealna propozycja dla każdego gracza. Klasyczny skok przycisków pozwala na bardzo wygodne użytkowanie w najcięższych warunkach. Urozmaiceniem wizualnym jest tęczowe podświetlenie klawiszy diodami, co uprzyjemni użytkowanie naszej klawiatury podczas gamingowych maratonów..",
+                            IsNew = true,
+                            Name = "Klawiatura membranowa GK-120DL",
+                            PickupInPerson = false,
+                            Price = 87.0,
                             Sold = false,
                             UserId = "99d9c392-94a9-4faa-bf54-296d6c871ced"
                         });
@@ -424,9 +467,9 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@BAZAR.PL",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAED6bI0jSYM5CCIpoLngbBbSZXkWu3bIDWSoDgA2KbwTli2/m9A//6DFfCWRSCNrQmg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKipk2TrPWCidpxk5r4Q0PoZ5/bD4tnTX8+jYm6iX52uDEuUrkqqr/D/3tu2q9ZQKw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e99fc8a7-2b14-46b6-bcf7-bf14ae7563eb",
+                            SecurityStamp = "84fd79e7-5671-4d31-a741-6dbdc7d49a1b",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -440,9 +483,9 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "KAMIL.01@INTERIA.PL",
                             NormalizedUserName = "KAMIL",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHvw5YO/T6rcTbFKL2Th77jmhQRlvPwsEvbhRLylXS9ZhyygDWUpLWws+w08Y+q3Vw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENbeVbHHzvP+YdHnHF6R5oHXymmf8bxw26SolrGaPaDB2ApCljOVvpVrnyibcGbi6g==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "cf14ba40-f500-4f2a-b02c-034d652600e4",
+                            SecurityStamp = "5508130f-1e3b-4f5b-9986-5d187c2ca500",
                             TwoFactorEnabled = false,
                             UserName = "Kamil"
                         },
@@ -456,9 +499,9 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "PATRYCJA02@BAZAR.PL",
                             NormalizedUserName = "PATRYCJA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAbi+9WRSqBgnIOLoL7vi2TF4kgeGYb5YZ88rIOSiCT18ifCYtpQxKMg6zY7P2zANQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB90Ob/LpXsNAWKTSE2luCsjmB/b5O7i3bqXo2DlRTwtNDhfMR0H/LoN4YMEue6Www==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "c16da9d5-b17a-4023-80dd-401984011951",
+                            SecurityStamp = "da8e09e0-c86b-4f9b-bd21-7a1110c33dcc",
                             TwoFactorEnabled = false,
                             UserName = "Patrycja"
                         });

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Bazar.Migrations
 {
-    public partial class Init10 : Migration
+    public partial class Init9 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -286,17 +286,17 @@ namespace Bazar.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3087acd6-3b79-426a-ad68-d12ef842485b", 0, "44aa2f9c-5a33-4a46-a22d-cc75f96014b0", "patrycja02@bazar.pl", true, false, null, "PATRYCJA02@BAZAR.PL", "PATRYCJA", "AQAAAAEAACcQAAAAEFZaToNFpAT/hy/ScnsEDrzl9PGX5rdeeFpM9GI5SU2V64RZQ0R+v5FwDFGlf9KSig==", null, false, "82016181-dbc4-4f6b-b4f4-53297bfb9c5c", false, "Patrycja" });
+                values: new object[] { "3087acd6-3b79-426a-ad68-d12ef842485b", 0, "44aa2f9c-5a33-4a46-a22d-cc75f96014b0", "patrycja02@bazar.pl", true, false, null, "PATRYCJA02@BAZAR.PL", "PATRYCJA", "AQAAAAEAACcQAAAAEB90Ob/LpXsNAWKTSE2luCsjmB/b5O7i3bqXo2DlRTwtNDhfMR0H/LoN4YMEue6Www==", null, false, "da8e09e0-c86b-4f9b-bd21-7a1110c33dcc", false, "Patrycja" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "99d9c392-94a9-4faa-bf54-296d6c871ced", 0, "890fdb4c-10b6-44b5-9e8e-b64bf206cc74", "kamil.01@interia.pl", true, false, null, "KAMIL.01@INTERIA.PL", "KAMIL", "AQAAAAEAACcQAAAAEExNLNE7nskCM/jM3hVLv1zSc7F96F9sTodmD6YjIE9B4D8TKpMR68rnHJPla7/ChQ==", null, false, "1480f580-4641-49b6-a714-3cac2f7dcf0b", false, "Kamil" });
+                values: new object[] { "99d9c392-94a9-4faa-bf54-296d6c871ced", 0, "890fdb4c-10b6-44b5-9e8e-b64bf206cc74", "kamil.01@interia.pl", true, false, null, "KAMIL.01@INTERIA.PL", "KAMIL", "AQAAAAEAACcQAAAAENbeVbHHzvP+YdHnHF6R5oHXymmf8bxw26SolrGaPaDB2ApCljOVvpVrnyibcGbi6g==", null, false, "5508130f-1e3b-4f5b-9986-5d187c2ca500", false, "Kamil" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "cc05fc2b-da9e-431d-a9dc-254c620de471", 0, "7b8f4b5b-80dc-4275-8331-ca552dc9a2d7", "admin@bazar.pl", true, false, null, "ADMIN@BAZAR.PL", "ADMIN", "AQAAAAEAACcQAAAAEDo84zAKn8N2uEqsaNdjtldrYs4sdpSvq33kGRcXXGOQNlnQqNs+l010M4nr7q/Row==", null, false, "0dbe07ca-b085-49a3-9cb3-42f7319afa09", false, "admin" });
+                values: new object[] { "cc05fc2b-da9e-431d-a9dc-254c620de471", 0, "7b8f4b5b-80dc-4275-8331-ca552dc9a2d7", "admin@bazar.pl", true, false, null, "ADMIN@BAZAR.PL", "ADMIN", "AQAAAAEAACcQAAAAEKipk2TrPWCidpxk5r4Q0PoZ5/bD4tnTX8+jYm6iX52uDEuUrkqqr/D/3tu2q9ZQKw==", null, false, "84fd79e7-5671-4d31-a741-6dbdc7d49a1b", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -352,6 +352,36 @@ namespace Bazar.Migrations
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
                 values: new object[] { 11, "Części do komputerów" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 12, "AGD" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 13, "Dom i ogród" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 14, "Moda" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 15, "Zdrowie" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 16, "Książki" });
+
+            migrationBuilder.InsertData(
+                table: "Categories",
+                columns: new[] { "Id", "Name" },
+                values: new object[] { 17, "Muzyka" });
 
             migrationBuilder.InsertData(
                 table: "DeliveryMethods",
@@ -437,6 +467,11 @@ namespace Bazar.Migrations
                 table: "Items",
                 columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
                 values: new object[] { 5, 11, false, "Zamontuj dysk SSD WD Blue SN570 o pojemności 1 TB w swoim komputerze lub laptopie i przyspiesz znacząco jego działanie. Dysk ten jest nawet 5-krotnie szybszy w porównaniu do najbardziej wydajnych dysków SSD SATA.", true, "WD 1TB M.2 PCIe NVMe Blue SN570", false, 299.0, false, "99d9c392-94a9-4faa-bf54-296d6c871ced" });
+
+            migrationBuilder.InsertData(
+                table: "Items",
+                columns: new[] { "Id", "CategoryId", "CourierDelivery", "Description", "IsNew", "Name", "PickupInPerson", "Price", "Sold", "UserId" },
+                values: new object[] { 6, 11, false, "Klawiatura Werewolf to idealna propozycja dla każdego gracza. Klasyczny skok przycisków pozwala na bardzo wygodne użytkowanie w najcięższych warunkach. Urozmaiceniem wizualnym jest tęczowe podświetlenie klawiszy diodami, co uprzyjemni użytkowanie naszej klawiatury podczas gamingowych maratonów..", true, "Klawiatura membranowa GK-120DL", false, 87.0, false, "99d9c392-94a9-4faa-bf54-296d6c871ced" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
