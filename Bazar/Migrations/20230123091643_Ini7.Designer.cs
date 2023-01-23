@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bazar.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230112142838_init")]
-    partial class init
+    [Migration("20230123091643_Ini7")]
+    partial class Ini7
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -426,9 +426,9 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@BAZAR.PL",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBjU+pE7PltQz+wleBHEscq72IBTN1uGKDjfy+56pdI7ZZa+EqcXkhXhktsEL1/s0w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED6bI0jSYM5CCIpoLngbBbSZXkWu3bIDWSoDgA2KbwTli2/m9A//6DFfCWRSCNrQmg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "be3038dc-e2a8-465d-ad29-2e4ff270ae04",
+                            SecurityStamp = "e99fc8a7-2b14-46b6-bcf7-bf14ae7563eb",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
@@ -442,9 +442,9 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "KAMIL.01@INTERIA.PL",
                             NormalizedUserName = "KAMIL",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN+OlPQ4BzS30WidFFpLudW+38zV7uUGg7JvDNJAoLQcl9W69hFknhetGvzyPLJzyw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHvw5YO/T6rcTbFKL2Th77jmhQRlvPwsEvbhRLylXS9ZhyygDWUpLWws+w08Y+q3Vw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f502450e-9f8e-4afe-8b50-440e1747d544",
+                            SecurityStamp = "cf14ba40-f500-4f2a-b02c-034d652600e4",
                             TwoFactorEnabled = false,
                             UserName = "Kamil"
                         },
@@ -458,9 +458,9 @@ namespace Bazar.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "PATRYCJA02@BAZAR.PL",
                             NormalizedUserName = "PATRYCJA",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIzsXrjIFPN8rA48Zz8r6uypJZIzRRPQ3/QnVMH0/dXV+YCUAATTYAqCrCAW31P4tg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAbi+9WRSqBgnIOLoL7vi2TF4kgeGYb5YZ88rIOSiCT18ifCYtpQxKMg6zY7P2zANQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d8c17292-6367-45c8-8863-93984bfc4a6c",
+                            SecurityStamp = "c16da9d5-b17a-4023-80dd-401984011951",
                             TwoFactorEnabled = false,
                             UserName = "Patrycja"
                         });
